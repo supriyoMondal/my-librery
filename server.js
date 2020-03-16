@@ -1,8 +1,9 @@
 const express = require('express');
 const expressLayouts = require('express-ejs-layouts');
 const path = require('path');
-require('dotenv').config();
-
+if (process.env.NODE_ENV != 'production') {
+    require('dotenv').config();
+}
 const connectDB = require('./db/connectDB');
 
 const app = express();
