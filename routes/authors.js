@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Author = require('../models/Author');
+const Book = require('../models/Book')
 //all authors route
 router.get('/', async (req, res) => {
     let searchOptions = {};
@@ -36,8 +37,61 @@ router.post('/', async (req, res) => {
             author
         });
     }
-    res.redirect('authors')
-    // return res.redirect(`author/${author.id}`)
+    // res.redirect('authors')
+    return res.redirect(`/authors/${author.id}`)
+})
+router.get('/:id', async (req, res) => {
+    let author, booksByAuthor = [];
+    try {
+        author = await Author.findById(req.params.id);
+        booksByAuthor = await Book.find({ author: author.id }).limit(3).exec();
+    } catch (error) {
+        console.log(error.message);
+        return res.redirect('/authors');
+    }
+    // console.log(booksByAuthor);
+
+    return res.render('authors/show', { author, booksByAuthor });
+})
+router.get('/:id/edit', async (req, res) => {
+    let author = {};
+    try {
+        author = await Author.findById(req.params.id);
+    } catch (error) {
+        console.error(error.message);
+        return res.redirect('/authors')
+    }
+    return res.render('authors/edit', { author });
+})
+router.put('/:id', async (req, res) => {
+    let author;
+    try {
+        author = await Author.findById(req.params.id);
+        author.name = req.body.name;
+        await author.save();
+        return res.redirect(`/authors/${author.id}`);
+    } catch (error) {
+        if (author == null) {
+            return res.redirect('/');
+        }
+        console.log(error.message);
+        return res.redirect('/authors');
+    }
+})
+router.delete('/:id', async (req, res) => {
+    let author;
+    try {
+        author = await Author.findById(req.params.id);
+        await author.remove();
+        return res.redirect(`/authors`);
+    } catch (error) {
+        console.log(error.message);
+
+        if (author == null) {
+            return res.redirect('/');
+        }
+        return res.redirect('/authors');
+    }
 })
 
 module.exports = router;

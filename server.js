@@ -4,6 +4,7 @@ const path = require('path');
 if (process.env.NODE_ENV != 'production') {
     require('dotenv').config();
 }
+const methodOverride = require('method-override');
 const connectDB = require('./db/connectDB');
 
 const app = express();
@@ -17,6 +18,7 @@ app.use(express.urlencoded({ limit: '10mb', extended: false }))
 //setting the default layout file for expressLayout
 app.set('layout', 'layouts/layout');
 app.use(expressLayouts);
+app.use(methodOverride('_method'))
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use('/authors', require('./routes/authors'))

@@ -1,0 +1,6 @@
+<h2>Edit Header</h2>
+<form action="/authors/<%= author.id %>?_method=PUT" method="POST">
+    <%- include('../parcels/_form-fields') %>
+    <a href="/authors/<%= author.id %> ">Cancel</a>
+    <button type="submit">Update</button>
+</form>
