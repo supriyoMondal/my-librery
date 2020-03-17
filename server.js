@@ -20,6 +20,7 @@ app.use(expressLayouts);
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use('/authors', require('./routes/authors'))
+app.use('/book', require('./routes/book'))
 app.use('/', require('./routes/index'));
 
 const PORT = process.env.PORT || 5000;

@@ -1,0 +1,27 @@
+<h2>Search Books</h2>
+<form action="/book" method="GET">
+    <div>
+        <label for="title">Title</label>
+        <input type="text" <% if(typeof searchParams.title != 'undefined')  {%> value="<%= searchParams.title %>"
+            <% } %> name="title" id="title">
+    </div>
+    <div>
+        <label for="publishedAfter">Publish After</label>
+        <input type="date" <% if(typeof searchParams.publishedAfter != 'undefined')  {%>
+            value="<%= searchParams.publishedAfter %>" <% } %> name="publishedAfter" id="publishedAfter">
+    </div>
+    <div>
+        <label for="publishedBefore">Publish Before</label>
+        <input type="date" <% if(typeof searchParams.publishedBefore != 'undefined')  {%>
+            value="<%= searchParams.publishedBefore %>" <% } %> name="publishedBefore" id="publishedBefore">
+    </div>
+    <button type="submit">Search</button>
+</form>
+<br>
+<div>
+    <% if (typeof books != 'undefined' ) { %>
+    <% books.forEach( book => { %>
+    <img src="<%= book.coverImagePath %> " alt="" height="150" width="100">
+    <%  } )  %>
+    <% } %>
+</div>
