@@ -1,6 +1,8 @@
 <h2 class="page-header"><%= author.name %> </h2>
-<a href="/authors/<%= author._id %>/edit">Edit</a>
-<%- include('../parcels/_delete-form',{url:`/authors/${author.id}`}) %>
+<div class="button-row">
+    <a class="btn btn-primary" href="/authors/<%= author._id %>/edit">Edit</a>
+    <%- include('../parcels/_delete-form',{url:`/authors/${author.id}`}) %>
+</div>
 <% if(booksByAuthor != null && booksByAuthor.length > 0) { %>
 <h2>Books By Author</h2>
 <div>

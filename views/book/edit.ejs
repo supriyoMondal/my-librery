@@ -2,6 +2,8 @@
 <!-- form before FilePond = enctype="multipart/form-data" -->
 <form action="/book/<%= book.id %>/edit?_method=PUT" method="POST">
     <%- include('../parcels/_form-fields-book') %>
-    <a href="/book">Cancel</a>
-    <button type="submit">Update</button>
+    <div class="form-row form-row-end button-row">
+        <a class="btn btn-danger" href="/book">Cancel</a>
+        <button class="btn btn-primary" type="submit">Update</button>
+    </div>
 </form>

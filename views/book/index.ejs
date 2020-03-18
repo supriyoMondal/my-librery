@@ -1,21 +1,29 @@
 <h2 class="page-header">Search Books</h2>
 <form action="/book" method="GET">
-    <div>
-        <label for="title">Title</label>
-        <input type="text" <% if(typeof searchParams.title != 'undefined')  {%> value="<%= searchParams.title %>"
-            <% } %> name="title" id="title">
+    <div class="form-row">
+        <div class="form-item">
+            <label for="title">Title</label>
+            <input type="text" <% if(typeof searchParams.title != 'undefined')  {%> value="<%= searchParams.title %>"
+                <% } %> name="title" id="title">
+        </div>
     </div>
-    <div>
-        <label for="publishedAfter">Publish After</label>
-        <input type="date" <% if(typeof searchParams.publishedAfter != 'undefined')  {%>
-            value="<%= searchParams.publishedAfter %>" <% } %> name="publishedAfter" id="publishedAfter">
+
+    <div class="form-row">
+        <div class="form-item">
+            <label for="publishedAfter">Publish After</label>
+            <input type="date" <% if(typeof searchParams.publishedAfter != 'undefined')  {%>
+                value="<%= searchParams.publishedAfter %>" <% } %> name="publishedAfter" id="publishedAfter">
+        </div>
+        <div class="form-item">
+            <label for="publishedBefore">Publish Before</label>
+            <input type="date" <% if(typeof searchParams.publishedBefore != 'undefined')  {%>
+                value="<%= searchParams.publishedBefore %>" <% } %> name="publishedBefore" id="publishedBefore">
+        </div>
     </div>
-    <div>
-        <label for="publishedBefore">Publish Before</label>
-        <input type="date" <% if(typeof searchParams.publishedBefore != 'undefined')  {%>
-            value="<%= searchParams.publishedBefore %>" <% } %> name="publishedBefore" id="publishedBefore">
+    <div class="button-row form-row form-row-end">
+        <button class="btn btn-primary" type="submit">Search</button>
+
     </div>
-    <button type="submit">Search</button>
 </form>
 <br>
 <div>

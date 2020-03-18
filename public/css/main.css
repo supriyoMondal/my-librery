@@ -1,6 +1,7 @@
 @import './shared/_vars.css';
 @import './shared/header.css';
 @import './shared/buttons.css';
+@import './shared/_form.css';
 
 *,*::before,*::after{
     box-sizing: border-box;
