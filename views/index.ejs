@@ -2,7 +2,10 @@
 <div>
     <% if (typeof books != 'undefined' ) { %>
     <% books.forEach( book => { %>
-    <img src="<%= book.coverImagePath %> " alt="" height="150" width="100">
+    <a href="book/<%= book.id  %>">
+        <img src="<%= book.coverImagePath %> " alt="" height="150" width="100">
+    </a>
+
     <%  } )  %>
     <% } %>
 </div>

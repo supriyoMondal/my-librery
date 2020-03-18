@@ -5,8 +5,10 @@
 <h2>Books By Author</h2>
 <div>
     <% booksByAuthor.forEach( book => { %>
-    <img src="<%= book.coverImagePath %> " alt="" height="150" width="100">
-    <%  } )  %>
+    <a href="/book/<%= book._id  %>">
+        <img src="<%= book.coverImagePath %> " alt="" height="150" width="100">
+        <%  } )  %>
+    </a>
 
 </div>
 <% } %>
