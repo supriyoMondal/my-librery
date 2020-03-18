@@ -1,0 +1,46 @@
+:root{
+    --color-btn-primary-bg: hsl(var(--color-base-hue),100%,83%);
+    --color-btn-primary-bg-hover: hsl(var(--color-base-hue),100%,73%);
+    --color-btn-primary-text : hsl(var(--color-base-hue),100%,20%);
+    --color-btn-danger-bg: hsl(var(--color-danger-hue),100%,83%);
+    --color-btn-danger-bg-hover: hsl(var(--color-danger-hue),100%,73%);
+    --color-btn-danger-text : black;
+}
+
+.btn {
+    text-decoration: none;
+    border: 1px solid black;
+    border-radius: .5rem;
+    padding: .3rem .7rem;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn-primary:hover{
+    background-color: var(--color-btn-primary-bg-hover);
+}
+.btn-danger:hover{
+    background-color: var(--color-btn-danger-bg-hover);
+}
+
+.btn-primary{
+    color: var(--color-btn-primary-text);
+    background: var(--color-btn-primary-bg);
+}
+.btn-danger{
+    color: var(--color-btn-danger-text);
+    background: var(--color-btn-danger-bg);
+}
+.button-row{
+    display: flex;
+    align-items: flex-end;
+    margin: .5rem 0;
+
+}
+.button-row > *{
+    margin-left: 1rem;
+}
+.button-row > *:first-child{
+    margin-left: 0;
+}
