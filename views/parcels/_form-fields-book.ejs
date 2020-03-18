@@ -1,4 +1,4 @@
-<div class="form-row">
+<div class="form-row-books">
     <div class="form-item">
         <label>Title</label>
         <input type="text" name="title" value="<%= book.title %>">
@@ -17,7 +17,7 @@
     </div>
 </div>
 
-<div class="form-row">
+<div class="form-row-books">
     <div class="form-item">
         <label>Publish Date</label>
         <input type="date" name="publishDate"
@@ -29,12 +29,12 @@
     </div>
 </div>
 
-<div class="form-row">
-    <div class="form-item form-item-no-grow">
+<div class="form-row-books">
+    <div class="form-item form-item-cover">
         <label>Cover</label>
         <input type="file" name="cover" class="filepond">
     </div>
-    <div class="form-item">
+    <div class="form-item form-item-desc">
         <label>Description</label>
         <textarea name="description"><%= book.description %></textarea>
     </div>

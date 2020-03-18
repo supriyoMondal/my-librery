@@ -1,0 +1,11 @@
+<div class="book-grid">
+    <% if(books != null && books.length > 0) { %>
+
+    <% books.forEach( book => { %>
+    <a href="/book/<%= book._id  %>">
+        <img src="<%= book.coverImagePath %> " alt="" class="">
+        <%  } )  %>
+    </a>
+
+    <% } %>
+</div>

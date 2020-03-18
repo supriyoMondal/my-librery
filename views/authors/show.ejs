@@ -3,14 +3,7 @@
     <a class="btn btn-primary" href="/authors/<%= author._id %>/edit">Edit</a>
     <%- include('../parcels/_delete-form',{url:`/authors/${author.id}`}) %>
 </div>
-<% if(booksByAuthor != null && booksByAuthor.length > 0) { %>
 <h2>Books By Author</h2>
-<div>
-    <% booksByAuthor.forEach( book => { %>
-    <a href="/book/<%= book._id  %>">
-        <img src="<%= book.coverImagePath %> " alt="" height="150" width="100">
-        <%  } )  %>
-    </a>
-
-</div>
-<% } %>
+<%- include('../parcels/_bookGrid',{
+    books : booksByAuthor,large:false
+})  %>

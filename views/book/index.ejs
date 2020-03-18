@@ -8,7 +8,7 @@
         </div>
     </div>
 
-    <div class="form-row">
+    <div class="form-row-books">
         <div class="form-item">
             <label for="publishedAfter">Publish After</label>
             <input type="date" <% if(typeof searchParams.publishedAfter != 'undefined')  {%>
@@ -27,11 +27,7 @@
 </form>
 <br>
 <div>
-    <% if (typeof books != 'undefined' ) { %>
-    <% books.forEach( book => { %>
-    <a href="book/<%= book._id  %>">
-        <img src="<%= book.coverImagePath %> " alt="" height="150" width="100">
-    </a>
-    <%  } )  %>
-    <% } %>
+    <%- include('../parcels/_bookGrid',{
+        books : books,large:false
+    })  %>
 </div>

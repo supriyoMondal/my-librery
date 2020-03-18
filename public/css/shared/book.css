@@ -1,0 +1,35 @@
+
+img{
+    width: 100%;
+    object-fit: cover;
+}
+.book-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,200px);
+    gap: 2rem;
+}
+
+.cover-image{
+   max-width: 200px;
+    height: 240px;
+}
+.book-show{
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr 2fr;
+}
+.desc-item{
+    margin: 1rem 0;
+}
+.desc-item:first-child{
+    margin: 0;
+}
+@media screen and (max-width:550px){
+    .book-grid{
+    gap: .5rem; 
+    grid-template-columns: repeat(auto-fill,120px);
+    }
+    .book-show{
+    grid-template-columns: 1fr ;
+    }
+}

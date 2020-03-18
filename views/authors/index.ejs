@@ -14,10 +14,10 @@
 </form>
 <% if (typeof authors != 'undefined' ) { %>
 <% authors.forEach( author => { %>
-<div>
+<div class="author-item">
     <div><%= author.name  %>
     </div>
-    <div class="button-row btn-row">
+    <div class="button-row form-row form-row-end">
         <a class="btn btn-primary" href="/authors/<%= author._id %> ">View</a>
         <a class="btn btn-primary" href="/authors/<%= author._id %>/edit">Edit</a>
 

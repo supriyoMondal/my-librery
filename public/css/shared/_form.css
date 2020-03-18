@@ -2,6 +2,11 @@
     display: flex;
     margin-bottom: .5rem;
 }
+.form-row-books{
+    display: flex;
+    margin-bottom: .5rem;
+}
+
 .form-item{
     display: flex;
     flex-direction: column;
@@ -59,9 +64,20 @@
 .form-row-end{
     justify-content: flex-end;
 }
+.form-item-desc,.form-item-cover{
+    max-height: 260px;
+}
+.form-item-cover{
+    max-width: 200px;
+}
 
 @media screen and (max-width:550px){
     .form-row{
-        flex-direction: column;
+        flex-direction: row;
     }
+    .form-row-books{
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    
 }

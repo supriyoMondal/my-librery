@@ -36,11 +36,19 @@
     display: flex;
     align-items: flex-end;
     margin: .5rem 0;
-
 }
 .button-row > *{
     margin-left: 1rem;
 }
 .button-row > *:first-child{
     margin-left: 0;
+}
+@media screen and (max-width:550px){
+ .button-row{
+     margin: .25rem;
+ }
+ .btn{
+     font-size: .8rem;
+     padding: .2rem .7rem;
+ }
 }
